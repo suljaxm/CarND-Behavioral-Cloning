@@ -7,7 +7,7 @@ with open(data_path) as csvfile:
     reader = csv.reader(csvfile)
     for line in reader:
         samples.append(line)
-samples = samples[1:]  
+samples = samples[1:]
 
 from sklearn.model_selection import train_test_split
 train_samples, validation_samples = train_test_split(samples, test_size=0.2)
@@ -30,10 +30,9 @@ def generator(samples, batch_size=32):
                 name_0 = current_path +batch_sample[0].split('/')[-1]
                 name_1 = current_path +batch_sample[1].split('/')[-1]
                 name_2 = current_path +batch_sample[2].split('/')[-1]
-                # print('name_0:',name_0)
-                # print('name_1:',name_1)
+
                 center_image = cv2.imread(name_0)
-                # print(center_image)
+
                 center_angle = float(batch_sample[3].strip())
                 images.append(center_image)
                 angles.append(center_angle)
@@ -118,8 +117,8 @@ history_object = model.fit_generator(train_generator,
             steps_per_epoch=math.ceil(len(train_samples)/batch_size),
             validation_data=validation_generator,
             validation_steps=math.ceil(len(validation_samples)/batch_size),
-            epochs=5, verbose=1)
-model.save('model_v6_ge.h5')
+            epochs=20, verbose=1)
+model.save('model.h5')
 
 import matplotlib.pyplot as plt
 ### print the keys contained in the history object
