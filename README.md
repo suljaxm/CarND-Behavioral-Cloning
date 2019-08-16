@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 
 * [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
 * [self-driving-car-sim](https://github.com/suljaxm/self-driving-car-sim)
-***  [win10](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/Term1-Sim/term1-simulator-windows.zip)
+  * [win10](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/Term1-Sim/term1-simulator-windows.zip)
 
 ```
 pip install -r requirements.txt
